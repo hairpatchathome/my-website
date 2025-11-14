@@ -107,12 +107,12 @@ const Hero = () => {
     return (
         <section className="bg-white text-center py-12 sm:py-16 md:py-20 lg:py-28">
             <div className="container mx-auto px-4 sm:px-6">
-                <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 leading-tight">Affordable. At your doorstep.</h2>
-                <p className="mt-4 sm:mt-6 text-lg sm:text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto">
+                <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-extrabold text-gray-900 leading-tight">Affordable. At your doorstep.</h2>
+                <p className="mt-4 sm:mt-6 text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
                     Get a private, at-home hair patch demo or service. Bookings start at just ₹299.
                 </p>
                 <div className="mt-8 sm:mt-10 flex flex-col sm:flex-row justify-center items-center gap-3 sm:gap-4 md:gap-5">
-                    <a href="#booking" className="w-full sm:w-auto bg-green-500 text-white font-bold py-3 sm:py-3.5 px-6 sm:px-8 rounded-lg hover:bg-green-600 transition duration-300 text-base sm:text-lg md:text-xl">
+                    <a href="#booking" className="w-full sm:w-auto bg-green-500 text-white font-bold py-3 sm:py-3.5 px-6 sm:px-8 rounded-lg hover:bg-green-600 transition duration-300 text-base sm:text-lg md:text-lg">
                         Book a Home Demo
                     </a>
                     <a href="#booking" className="w-full sm:w-auto bg-blue-600 text-white font-bold py-3 sm:py-3.5 px-6 sm:px-8 rounded-lg hover:bg-blue-700 transition duration-300 text-base sm:text-lg md:text-xl">
@@ -134,14 +134,14 @@ const Steps = () => {
     return (
         <section id="how-it-works" className="bg-gray-50 py-12 sm:py-16 md:py-20 lg:py-28">
             <div className="container mx-auto px-4 sm:px-6 text-center">
-                <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-10 sm:mb-12 md:mb-16">Get Started in 3 Easy Steps</h3>
+                <h3 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-bold text-gray-900 mb-10 sm:mb-12 md:mb-16">Get Started in 3 Easy Steps</h3>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10 lg:gap-12">
                     {stepsData.map((step, index) => (
                         <div key={index} className="flex flex-col items-center">
                             <div className="bg-blue-100 rounded-full p-4 sm:p-5 md:p-6 mb-4 sm:mb-6">
                                 {step.icon}
                             </div>
-                            <h4 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-800 mb-3 sm:mb-4">{step.title}</h4>
+                            <h4 className="text-2xl sm:text-3xl md:text-2xl font-bold text-gray-800 mb-3 sm:mb-4">{step.title}</h4>
                             <p className="text-base sm:text-lg md:text-lg text-gray-600 max-w-xs leading-relaxed">{step.description}</p>
                         </div>
                     ))}
@@ -153,8 +153,8 @@ const Steps = () => {
 
 const PricingCard: React.FC<{ title: string; price: string; description: string; buttonText: string }> = ({ title, price, description, buttonText }) => (
     <div className="bg-white rounded-xl shadow-lg p-6 sm:p-8 md:p-8 flex flex-col items-center text-center w-full max-w-md">
-        <h4 className="text-2xl sm:text-2xl md:text-3xl font-bold text-gray-800">{title}</h4>
-        <p className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-gray-900 my-3 sm:my-4">{price}</p>
+        <h4 className="text-2xl sm:text-2xl md:text-2xl font-bold text-gray-800">{title}</h4>
+        <p className="text-5xl sm:text-5xl md:text-5xl font-extrabold text-gray-900 my-3 sm:my-4">{price}</p>
         <p className="text-base sm:text-lg md:text-lg text-gray-600 mb-6 sm:mb-8 min-h-fit leading-relaxed">{description}</p>
         <a href="#booking" className="w-full bg-green-500 text-white font-bold py-3 sm:py-3.5 px-6 sm:px-8 rounded-lg hover:bg-green-600 transition duration-300 text-base sm:text-lg md:text-lg">
             {buttonText}
@@ -165,7 +165,7 @@ const PricingCard: React.FC<{ title: string; price: string; description: string;
 const Pricing = () => (
     <section id="pricing" className="bg-white py-12 sm:py-16 md:py-20 lg:py-28">
         <div className="container mx-auto px-4 sm:px-6 text-center">
-            <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-10 sm:mb-12 md:mb-16">Clear & Simple Pricing</h3>
+            <h3 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-bold text-gray-900 mb-10 sm:mb-12 md:mb-16">Clear & Simple Pricing</h3>
             <div className="flex flex-col md:flex-row justify-center items-stretch gap-6 sm:gap-8 md:gap-10">
                 <PricingCard title="Home Demo" price="₹299" description="Our technician visits your home, shows you patch samples, and provides a full patch trial so you can see the look and feel." buttonText="Book Home Demo"/>
                 <PricingCard title="Home Service (Re-fixing)" price="₹799" description="Our most popular option. We provide a full at-home service, including patch removal, cleaning, and professional re-fixing." buttonText="Book Home Service"/>
@@ -224,7 +224,7 @@ const BookingForm = () => {
     return (
         <section id="booking" className="bg-[#E0E8EB] py-12 sm:py-16 md:py-20 lg:py-28">
             <div className="container mx-auto px-4 sm:px-6 text-center">
-                <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900">Ready to Get Started?</h3>
+                <h3 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-bold text-gray-900">Ready to Get Started?</h3>
                 <p className="mt-3 sm:mt-4 text-base sm:text-lg md:text-xl text-gray-700">Book online or chat with us directly on WhatsApp for any questions.</p>
                 <div className="mt-8 sm:mt-10 max-w-lg mx-auto bg-white rounded-xl shadow-2xl p-6 sm:p-8">
                     <form onSubmit={handleSubmit} className="space-y-5 sm:space-y-6 text-left">
