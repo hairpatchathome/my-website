@@ -21,8 +21,10 @@ const CheckCircleIcon = () => (
 );
 
 const WhatsAppIcon = () => (
-    <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-white" fill="currentColor" viewBox="0 0 24 24">
-        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421-7.403h-.004a9.87 9.87 0 00-4.905 1.347l-.348-.18L2.92 5.55l.46 1.422a9.875 9.875 0 001.523 4.03c-.339 1.582-.214 3.228.618 4.878 1.255 2.423 4.01 3.622 6.623 3.622h.004c3.339 0 6.247-1.622 8.041-4.289.711-1.046 1.37-2.427 1.37-3.942 0-5.518-4.507-10-10.033-10z"/>
+    <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" aria-label="WhatsApp" role="img" viewBox="0 0 512 512">
+        <rect width="512" height="512" rx="15%" fill="#25d366"/>
+        <path fill="#25d366" stroke="#ffffff" strokeWidth="26" d="M123 393l14-65a138 138 0 1150 47z"/>
+        <path fill="#ffffff" d="M308 273c-3-2-6-3-9 1l-12 16c-3 2-5 3-9 1-15-8-36-17-54-47-1-4 1-6 3-8l9-14c2-2 1-4 0-6l-12-29c-3-8-6-7-9-7h-8c-2 0-6 1-10 5-22 22-13 53 3 73 3 4 23 40 66 59 32 14 39 12 48 10 11-1 22-10 27-19 1-3 6-16 2-18"/>
     </svg>
 );
 
@@ -283,7 +285,7 @@ const Footer: React.FC<{ onNavigate: (page: string) => void }> = ({ onNavigate }
 };
 
 const FloatingWhatsAppButton = () => (
-    <a href="https://wa.me/911234567890" target="_blank" rel="noopener noreferrer" className="fixed bottom-4 sm:bottom-6 right-4 sm:right-6 bg-green-500 rounded-full p-3 sm:p-4 shadow-lg hover:bg-green-600 transition duration-300 z-50" aria-label="Chat on WhatsApp">
+    <a href="https://wa.me/911234567890" target="_blank" rel="noopener noreferrer" className="fixed bottom-4 sm:bottom-6 right-4 sm:right-6 rounded-full shadow-lg hover:shadow-xl transition duration-300 z-50" aria-label="Chat on WhatsApp">
         <WhatsAppIcon />
     </a>
 );
