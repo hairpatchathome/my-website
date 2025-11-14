@@ -32,6 +32,7 @@ const Header: React.FC<{ onNavigate: (page: string) => void; currentPage: string
     const navLinks = [
         { href: '#how-it-works', text: 'How It Works' },
         { href: '#pricing', text: 'Pricing' },
+        { page: 'about', text: 'About Us' },
     ];
     
     const handleScrollLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
@@ -53,7 +54,13 @@ const Header: React.FC<{ onNavigate: (page: string) => void; currentPage: string
                 <nav className="hidden md:flex items-center space-x-6 lg:space-x-8">
                     {currentPage === 'main' ? (
                         <>
-                            {navLinks.map(link => <a key={link.href} href={link.href} onClick={(e) => handleScrollLinkClick(e, link.href)} className="text-sm lg:text-base text-gray-600 hover:text-gray-900 font-medium">{link.text}</a>)}
+                            {navLinks.map(link => 
+                                'page' in link ? (
+                                    <button key={link.page} onClick={() => onNavigate(link.page)} className="text-sm lg:text-base text-gray-600 hover:text-gray-900 font-medium">{link.text}</button>
+                                ) : (
+                                    <a key={link.href} href={link.href} onClick={(e) => handleScrollLinkClick(e, link.href)} className="text-sm lg:text-base text-gray-600 hover:text-gray-900 font-medium">{link.text}</a>
+                                )
+                            )}
                              <a href="#booking" onClick={(e) => handleScrollLinkClick(e, '#booking')} className="text-sm lg:text-base bg-green-500 text-white font-bold py-2 px-4 lg:py-2.5 lg:px-5 rounded-lg hover:bg-green-600 transition duration-300">
                                 Book Now
                             </a>
@@ -73,7 +80,13 @@ const Header: React.FC<{ onNavigate: (page: string) => void; currentPage: string
                    <div className="container mx-auto px-4 py-4 flex flex-col items-center space-y-3">
                         {currentPage === 'main' ? (
                             <>
-                                {navLinks.map(link => <a key={link.href} href={link.href} onClick={(e) => handleScrollLinkClick(e, link.href)} className="text-base text-gray-600 hover:text-gray-900 w-full text-center py-2 font-medium">{link.text}</a>)}
+                                {navLinks.map(link => 
+                                    'page' in link ? (
+                                        <button key={link.page} onClick={() => { onNavigate(link.page); setIsMenuOpen(false); }} className="text-base text-gray-600 hover:text-gray-900 w-full text-center py-2 font-medium">{link.text}</button>
+                                    ) : (
+                                        <a key={link.href} href={link.href} onClick={(e) => handleScrollLinkClick(e, link.href)} className="text-base text-gray-600 hover:text-gray-900 w-full text-center py-2 font-medium">{link.text}</a>
+                                    )
+                                )}
                                 <a href="#booking" onClick={(e) => handleScrollLinkClick(e, '#booking')} className="w-full text-center bg-green-500 text-white font-bold py-2.5 px-4 rounded-lg hover:bg-green-600 transition duration-300 text-base">
                                     Book Now
                                 </a>
@@ -251,10 +264,12 @@ const Footer: React.FC<{ onNavigate: (page: string) => void }> = ({ onNavigate }
     return (
         <footer className="bg-[#E0E8EB] text-gray-700 text-center py-8 sm:py-10">
             <div className="container mx-auto px-4 sm:px-6">
-                <p className="text-sm sm:text-base mb-3 sm:mb-4">&copy; 2024 Hair Patch At Home. All rights reserved.</p>
-                <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 mb-4 sm:mb-6">
+                <p className="text-sm sm:text-base mb-3 sm:mb-4">&copy; 2025 Hair Patch At Home. All rights reserved.</p>
+                <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 mb-4 sm:mb-6 flex-wrap">
                     <a href="mailto:info@hairpatchathome.com" className="text-sm sm:text-base hover:text-gray-900 font-medium">info@hairpatchathome.com</a>
                     <button onClick={() => onNavigate('privacy')} className="text-sm sm:text-base hover:text-gray-900 font-medium">Privacy Policy</button>
+                    <button onClick={() => onNavigate('about')} className="text-sm sm:text-base hover:text-gray-900 font-medium">About Us</button>
+                    <button onClick={() => onNavigate('disclaimer')} className="text-sm sm:text-base hover:text-gray-900 font-medium">Disclaimer</button>
                 </div>
                  <div className="text-xs sm:text-sm leading-relaxed">
                     <p className="font-semibold text-sm sm:text-base">Hair Patch At Home</p>
@@ -278,7 +293,7 @@ const PrivacyPolicy = () => (
         <div className="container mx-auto px-4 sm:px-6 max-w-4xl">
             <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6 sm:mb-8">Privacy Policy</h2>
             <div className="space-y-4 sm:space-y-5 text-base sm:text-lg text-gray-700">
-                <p><strong>Last updated: July 24, 2024</strong></p>
+                <p><strong>Last updated: July 24, 2025</strong></p>
                 <p>This Privacy Policy describes Our policies and procedures on the collection, use and disclosure of Your information when You use the Service and tells You about Your privacy rights and how the law protects You.</p>
                 
                 <h3 className="text-xl sm:text-2xl font-semibold pt-4 sm:pt-6">Interpretation and Definitions</h3>
@@ -292,6 +307,108 @@ const PrivacyPolicy = () => (
 
                 <h3 className="text-xl sm:text-2xl font-semibold pt-4 sm:pt-6">Contact Us</h3>
                 <p>If you have any questions about this Privacy Policy, You can contact us: By email: info@hairpatchathome.com</p>
+            </div>
+        </div>
+    </div>
+);
+
+const AboutUs = () => (
+    <div className="bg-white py-8 sm:py-12">
+        <div className="container mx-auto px-4 sm:px-6 max-w-4xl">
+            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6 sm:mb-8">About Us</h2>
+            <div className="space-y-4 sm:space-y-5 text-base sm:text-lg text-gray-700">
+                <p>
+                    <strong>Hair Patch At Home</strong> is dedicated to providing convenient, professional at-home hair patch services to our valued customers across Mumbai and surrounding areas.
+                </p>
+                
+                <h3 className="text-xl sm:text-2xl font-semibold pt-4 sm:pt-6">Our Mission</h3>
+                <p>
+                    We believe everyone deserves quality hair solutions without the hassle of visiting salons or clinics. Our mission is to bring professional, affordable hair patch services directly to your doorstep, ensuring comfort and privacy every step of the way.
+                </p>
+
+                <h3 className="text-xl sm:text-2xl font-semibold pt-4 sm:pt-6">What We Offer</h3>
+                <p>
+                    We provide comprehensive at-home hair patch services including:
+                </p>
+                <ul className="list-disc list-inside space-y-2 ml-2">
+                    <li>Professional hair patch demonstrations and trials</li>
+                    <li>Expert application and fitting</li>
+                    <li>Maintenance and re-fixing services</li>
+                    <li>Personalized consultation and support</li>
+                </ul>
+
+                <h3 className="text-xl sm:text-2xl font-semibold pt-4 sm:pt-6">Why Choose Us?</h3>
+                <ul className="list-disc list-inside space-y-2 ml-2">
+                    <li><strong>Convenience:</strong> Services delivered to your home</li>
+                    <li><strong>Affordability:</strong> Starting from just ₹299</li>
+                    <li><strong>Privacy:</strong> Professional service in the comfort of your home</li>
+                    <li><strong>Expertise:</strong> Trained and experienced technicians</li>
+                    <li><strong>Quality:</strong> Premium hair patch products and services</li>
+                </ul>
+
+                <h3 className="text-xl sm:text-2xl font-semibold pt-4 sm:pt-6">Contact Us</h3>
+                <p>
+                    Vaibhav Mahim Co-op HSG Society, Office No 2, Ground Floor, Veer Savarkar Marg, Cadel Road, Mahim West, Mumbai 400016
+                </p>
+                <p>
+                    Email: <a href="mailto:info@hairpatchathome.com" className="text-blue-600 hover:underline">info@hairpatchathome.com</a>
+                </p>
+            </div>
+        </div>
+    </div>
+);
+
+const Disclaimer = () => (
+    <div className="bg-white py-8 sm:py-12">
+        <div className="container mx-auto px-4 sm:px-6 max-w-4xl">
+            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6 sm:mb-8">Disclaimer</h2>
+            <div className="space-y-4 sm:space-y-5 text-base sm:text-lg text-gray-700">
+                <p><strong>Last updated: November 14, 2025</strong></p>
+                
+                <h3 className="text-xl sm:text-2xl font-semibold pt-4 sm:pt-6">General Disclaimer</h3>
+                <p>
+                    This website and all information provided by Hair Patch At Home is offered on an "as-is" basis without warranties of any kind. We make no representations or warranties regarding the accuracy, completeness, or reliability of the information provided.
+                </p>
+
+                <h3 className="text-xl sm:text-2xl font-semibold pt-4 sm:pt-6">Medical Disclaimer</h3>
+                <p>
+                    Hair Patch At Home is not a medical service provider. Our services are cosmetic in nature. We do not diagnose, treat, cure, or prevent any medical conditions. Please consult with a dermatologist or medical professional before using our services if you have any underlying scalp conditions or health concerns.
+                </p>
+
+                <h3 className="text-xl sm:text-2xl font-semibold pt-4 sm:pt-6">Product Disclaimer</h3>
+                <p>
+                    While we strive to provide high-quality hair patch products, individual results may vary based on personal factors such as hair type, scalp condition, and application method. We do not guarantee specific results or outcomes.
+                </p>
+
+                <h3 className="text-xl sm:text-2xl font-semibold pt-4 sm:pt-6">Liability Limitation</h3>
+                <p>
+                    Hair Patch At Home shall not be held liable for any direct, indirect, incidental, special, or consequential damages arising from the use of our services or products, including but not limited to loss of profits, loss of use, or data loss.
+                </p>
+
+                <h3 className="text-xl sm:text-2xl font-semibold pt-4 sm:pt-6">Allergy and Sensitivity</h3>
+                <p>
+                    Please inform our technicians of any known allergies or sensitivities to hair products, adhesives, or materials before the service. We are not responsible for allergic reactions resulting from non-disclosure of allergies or sensitivities.
+                </p>
+
+                <h3 className="text-xl sm:text-2xl font-semibold pt-4 sm:pt-6">Third-Party Links</h3>
+                <p>
+                    This website may contain links to third-party websites. We are not responsible for the content, accuracy, or practices of external websites. Access to third-party websites is at your own risk.
+                </p>
+
+                <h3 className="text-xl sm:text-2xl font-semibold pt-4 sm:pt-6">Age Restriction</h3>
+                <p>
+                    Our services are intended for individuals aged 18 years and above. If you are under 18, please obtain parental consent before using our services.
+                </p>
+
+                <h3 className="text-xl sm:text-2xl font-semibold pt-4 sm:pt-6">Changes to Disclaimer</h3>
+                <p>
+                    Hair Patch At Home reserves the right to modify this disclaimer at any time without prior notice. Continued use of our services implies acceptance of the updated disclaimer.
+                </p>
+
+                <h3 className="text-xl sm:text-2xl font-semibold pt-4 sm:pt-6">Contact Us</h3>
+                <p>
+                    If you have any questions regarding this disclaimer, please contact us at <a href="mailto:info@hairpatchathome.com" className="text-blue-600 hover:underline">info@hairpatchathome.com</a>
+                </p>
             </div>
         </div>
     </div>
@@ -316,6 +433,12 @@ export default function App() {
             <Pricing />
             <BookingForm />
           </>
+        ) : currentPage === 'privacy' ? (
+          <PrivacyPolicy />
+        ) : currentPage === 'about' ? (
+          <AboutUs />
+        ) : currentPage === 'disclaimer' ? (
+          <Disclaimer />
         ) : (
           <PrivacyPolicy />
         )}
