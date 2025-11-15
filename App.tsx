@@ -153,6 +153,268 @@ const Steps = () => {
     );
 };
 
+const VideoSection = () => (
+    <section className="bg-white py-12 sm:py-16 md:py-20 lg:py-28">
+        <div className="container mx-auto px-4 sm:px-6">
+            <h3 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-bold text-gray-900 mb-10 sm:mb-12 md:mb-16 text-center">See Our At-Home Process</h3>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+                <div className="flex flex-col items-center">
+                    <img src="/images/home-demo.png" alt="Home Demo" className="w-full rounded-xl h-40 sm:h-48 md:h-56 object-cover mb-4 shadow-md" />
+                    <h4 className="text-lg sm:text-xl font-bold text-gray-800 mb-2">Home Demo</h4>
+                    <p className="text-base text-gray-600 text-center">Friendly technician arrival and professional consultation</p>
+                </div>
+                <div className="flex flex-col items-center">
+                    <img src="/images/home-service.png" alt="Home Service" className="w-full rounded-xl h-40 sm:h-48 md:h-56 object-cover mb-4 shadow-md" />
+                    <h4 className="text-lg sm:text-xl font-bold text-gray-800 mb-2">Home Service</h4>
+                    <p className="text-base text-gray-600 text-center">Professional patch re-fixing service at home</p>
+                </div>
+                <div className="flex flex-col items-center">
+                    <img src="/images/final-result.png" alt="Final Result" className="w-full rounded-xl h-40 sm:h-48 md:h-56 object-cover mb-4 shadow-md" />
+                    <h4 className="text-lg sm:text-xl font-bold text-gray-800 mb-2">Final Result</h4>
+                    <p className="text-base text-gray-600 text-center">Happy customer with amazing results</p>
+                </div>
+            </div>
+        </div>
+    </section>
+);
+
+const ComparisonChart = () => (
+    <section className="bg-white py-12 sm:py-16 md:py-20 lg:py-28">
+        <div className="container mx-auto px-4 sm:px-6">
+            <h3 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-bold text-gray-900 mb-10 sm:mb-12 md:mb-16 text-center">Why Choose Our Hair System Over a Transplant?</h3>
+            <div className="overflow-x-auto">
+                <table className="w-full border-collapse">
+                    <thead>
+                        <tr className="bg-gray-100">
+                            <th className="border border-gray-300 px-4 py-3 text-left font-bold text-gray-900">Feature</th>
+                            <th className="border border-gray-300 px-4 py-3 text-center font-bold text-green-600">Our Hair System</th>
+                            <th className="border border-gray-300 px-4 py-3 text-center font-bold text-gray-600">Hair Transplant</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr className="bg-white hover:bg-gray-50">
+                            <td className="border border-gray-300 px-4 py-3 font-semibold text-gray-900">Instant Results</td>
+                            <td className="border border-gray-300 px-4 py-3 text-center text-green-600">✓ 100% Instant</td>
+                            <td className="border border-gray-300 px-4 py-3 text-center text-gray-600">✗ 6-12 Months</td>
+                        </tr>
+                        <tr className="bg-gray-50 hover:bg-gray-100">
+                            <td className="border border-gray-300 px-4 py-3 font-semibold text-gray-900">Healing & Recovery</td>
+                            <td className="border border-gray-300 px-4 py-3 text-center text-green-600">✓ 0 Days</td>
+                            <td className="border border-gray-300 px-4 py-3 text-center text-gray-600">✗ 2-4 Weeks</td>
+                        </tr>
+                        <tr className="bg-white hover:bg-gray-50">
+                            <td className="border border-gray-300 px-4 py-3 font-semibold text-gray-900">Pain & Discomfort</td>
+                            <td className="border border-gray-300 px-4 py-3 text-center text-green-600">✓ None</td>
+                            <td className="border border-gray-300 px-4 py-3 text-center text-gray-600">✗ Significant</td>
+                        </tr>
+                        <tr className="bg-gray-50 hover:bg-gray-100">
+                            <td className="border border-gray-300 px-4 py-3 font-semibold text-gray-900">Cost</td>
+                            <td className="border border-gray-300 px-4 py-3 text-center text-green-600">✓ Affordable Monthly Options</td>
+                            <td className="border border-gray-300 px-4 py-3 text-center text-gray-600">✗ Very Expensive (₹2-5 Lakhs+)</td>
+                        </tr>
+                        <tr className="bg-white hover:bg-gray-50">
+                            <td className="border border-gray-300 px-4 py-3 font-semibold text-gray-900">No Commitment</td>
+                            <td className="border border-gray-300 px-4 py-3 text-center text-green-600">✓ Try Risk-Free</td>
+                            <td className="border border-gray-300 px-4 py-3 text-center text-gray-600">✗ Permanent Decision</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+);
+
+const PainPointsSection = () => (
+    <section className="bg-gray-50 py-12 sm:py-16 md:py-20 lg:py-28">
+        <div className="container mx-auto px-4 sm:px-6">
+            <h3 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-bold text-gray-900 mb-10 sm:mb-12 md:mb-16 text-center">Does This Sound Like You?</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 max-w-4xl mx-auto">
+                <div className="bg-white rounded-xl p-6 sm:p-8 shadow-md border-l-4 border-green-500">
+                    <div className="flex items-start">
+                        <svg className="w-8 h-8 text-green-500 mt-1 mr-4 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                            <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/>
+                        </svg>
+                        <div>
+                            <h4 className="text-lg sm:text-xl font-bold text-gray-900 mb-2">Feel Self-Conscious in Photos</h4>
+                            <p className="text-gray-700 text-base">Avoid cameras because of thinning hair or bald spots?</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div className="bg-white rounded-xl p-6 sm:p-8 shadow-md border-l-4 border-green-500">
+                    <div className="flex items-start">
+                        <svg className="w-8 h-8 text-green-500 mt-1 mr-4 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                            <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/>
+                        </svg>
+                        <div>
+                            <h4 className="text-lg sm:text-xl font-bold text-gray-900 mb-2">Tried Pills & Shampoos</h4>
+                            <p className="text-gray-700 text-base">Used countless products that promised results but delivered nothing?</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div className="bg-white rounded-xl p-6 sm:p-8 shadow-md border-l-4 border-green-500">
+                    <div className="flex items-start">
+                        <svg className="w-8 h-8 text-green-500 mt-1 mr-4 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                            <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/>
+                        </svg>
+                        <div>
+                            <h4 className="text-lg sm:text-xl font-bold text-gray-900 mb-2">Not Ready for a Transplant</h4>
+                            <p className="text-gray-700 text-base">Intimidated by the pain, cost, and long recovery of surgery?</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div className="bg-white rounded-xl p-6 sm:p-8 shadow-md border-l-4 border-green-500">
+                    <div className="flex items-start">
+                        <svg className="w-8 h-8 text-green-500 mt-1 mr-4 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                            <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/>
+                        </svg>
+                        <div>
+                            <h4 className="text-lg sm:text-xl font-bold text-gray-900 mb-2">Want Something Real & Effortless</h4>
+                            <p className="text-gray-700 text-base">Looking for a solution that looks natural and requires minimal effort?</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p className="text-center text-gray-700 text-lg font-semibold mt-10 sm:mt-12 text-green-600">If you said yes to any of these, our at-home hair system service is perfect for you.</p>
+        </div>
+    </section>
+);
+
+const NoObligation = () => (
+    <section className="bg-blue-50 py-12 sm:py-16 md:py-20 lg:py-28">
+        <div className="container mx-auto px-4 sm:px-6">
+            <h3 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-bold text-gray-900 mb-10 sm:mb-12 md:mb-16 text-center">Your ₹299 No-Pressure Home Demo</h3>
+            <div className="max-w-3xl mx-auto space-y-6 sm:space-y-8">
+                <div className="bg-white rounded-xl p-6 sm:p-8 shadow-md">
+                    <div className="flex items-start mb-4">
+                        <div className="flex-shrink-0 flex items-center justify-center h-10 w-10 rounded-md bg-green-500 text-white font-bold">1</div>
+                        <h4 className="text-xl sm:text-2xl font-bold text-gray-900 ml-4">A 1-on-1 Session, Not a Sales Pitch</h4>
+                    </div>
+                    <p className="text-gray-700 text-base ml-14">Our technician comes to your home to understand your goals. We listen, we answer questions, and we give honest advice. That's it.</p>
+                </div>
+
+                <div className="bg-white rounded-xl p-6 sm:p-8 shadow-md">
+                    <div className="flex items-start mb-4">
+                        <div className="flex-shrink-0 flex items-center justify-center h-10 w-10 rounded-md bg-green-500 text-white font-bold">2</div>
+                        <h4 className="text-xl sm:text-2xl font-bold text-gray-900 ml-4">See & Feel Real Hair Samples</h4>
+                    </div>
+                    <p className="text-gray-700 text-base ml-14">Try on our hair patches in your own home, in your own mirror. No clinic. No photos. Just you, the sample, and complete privacy.</p>
+                </div>
+
+                <div className="bg-white rounded-xl p-6 sm:p-8 shadow-md">
+                    <div className="flex items-start mb-4">
+                        <div className="flex-shrink-0 flex items-center justify-center h-10 w-10 rounded-md bg-green-500 text-white font-bold">3</div>
+                        <h4 className="text-xl sm:text-2xl font-bold text-gray-900 ml-4">Genuine Guidance. No Obligation.</h4>
+                    </div>
+                    <p className="text-gray-700 text-base ml-14">If we think a hair system is right for you, we'll tell you why. If we don't think it will work, we'll be honest about that too. No pressure. No guilt. Just real advice.</p>
+                </div>
+            </div>
+            
+            <div className="mt-10 sm:mt-12 text-center">
+                <a href="#booking" className="inline-block bg-green-500 text-white font-bold py-3 sm:py-3.5 px-8 sm:px-10 rounded-lg hover:bg-green-600 transition duration-300 text-lg">
+                    Book Your ₹299 Demo
+                </a>
+            </div>
+        </div>
+    </section>
+);
+
+const Testimonials = () => (
+    <section className="bg-blue-50 py-12 sm:py-16 md:py-20 lg:py-28">
+        <div className="container mx-auto px-4 sm:px-6">
+            <h3 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-bold text-gray-900 mb-10 sm:mb-12 md:mb-16 text-center">What Our Customers Say</h3>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+                <div className="bg-white rounded-xl p-6 sm:p-8 shadow-lg">
+                    <div className="flex items-center mb-4">
+                        {[...Array(5)].map((_, i) => (
+                            <svg key={i} className="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                        ))}
+                    </div>
+                    <p className="text-gray-700 text-base mb-4 leading-relaxed">"It was so convenient to have this done at home. The technician was very professional and discreet. I couldn't ask for better service!"</p>
+                    <p className="text-gray-800 font-bold text-base">- Raj K.</p>
+                </div>
+                <div className="bg-white rounded-xl p-6 sm:p-8 shadow-lg">
+                    <div className="flex items-center mb-4">
+                        {[...Array(5)].map((_, i) => (
+                            <svg key={i} className="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                        ))}
+                    </div>
+                    <p className="text-gray-700 text-base mb-4 leading-relaxed">"I was quoted 5x this price at a salon. The quality here is amazing for the price. Worth every penny!"</p>
+                    <p className="text-gray-800 font-bold text-base">- Priya M.</p>
+                </div>
+                <div className="bg-white rounded-xl p-6 sm:p-8 shadow-lg">
+                    <div className="flex items-center mb-4">
+                        {[...Array(5)].map((_, i) => (
+                            <svg key={i} className="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                        ))}
+                    </div>
+                    <p className="text-gray-700 text-base mb-4 leading-relaxed">"The ₹299 demo was perfect. I could try it on with no pressure in my own home. Highly recommended!"</p>
+                    <p className="text-gray-800 font-bold text-base">- Amit S.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+);
+
+const FAQ = () => {
+    const [expanded, setExpanded] = useState<number | null>(null);
+    
+    const faqs = [
+        {
+            question: "Is the at-home service hygienic?",
+            answer: "Yes. Our technicians are trained professionals who use sterilized equipment and follow strict hygiene protocols to ensure safety and cleanliness in your home."
+        },
+        {
+            question: "How long does a visit take?",
+            answer: "A Home Demo (₹299) takes about 30-45 minutes. A Home Service (₹799) takes about 60-90 minutes depending on the work required."
+        },
+        {
+            question: "Is it really private?",
+            answer: "Absolutely. Our service is 100% discreet. Our technicians arrive in a standard uniform with no loud branding, ensuring complete privacy."
+        },
+        {
+            question: "What areas in Mumbai do you service?",
+            answer: "We service all of Mumbai, from Churchgate to Virar and CSMT to Badlapur. Contact us for areas outside standard coverage."
+        }
+    ];
+
+    return (
+        <section className="bg-white py-12 sm:py-16 md:py-20 lg:py-28">
+            <div className="container mx-auto px-4 sm:px-6 max-w-3xl">
+                <h3 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-bold text-gray-900 mb-10 sm:mb-12 md:mb-16 text-center">Frequently Asked Questions</h3>
+                <div className="space-y-4">
+                    {faqs.map((faq, index) => (
+                        <div key={index} className="border border-gray-200 rounded-lg overflow-hidden">
+                            <button
+                                onClick={() => setExpanded(expanded === index ? null : index)}
+                                className="w-full px-6 sm:px-8 py-4 sm:py-5 bg-gray-50 hover:bg-gray-100 transition text-left flex justify-between items-center"
+                            >
+                                <h4 className="text-base sm:text-lg font-bold text-gray-800">{faq.question}</h4>
+                                <svg className={`w-5 h-5 text-gray-600 transition ${expanded === index ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+                                </svg>
+                            </button>
+                            {expanded === index && (
+                                <div className="px-6 sm:px-8 py-4 sm:py-5 bg-white border-t border-gray-200">
+                                    <p className="text-base text-gray-700 leading-relaxed">{faq.answer}</p>
+                                </div>
+                            )}
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </section>
+    );
+};
+
 const PricingCard: React.FC<{ title: string; price: string; description: string; buttonText: string }> = ({ title, price, description, buttonText }) => (
     <div className="bg-white rounded-xl shadow-lg p-6 sm:p-8 md:p-8 flex flex-col items-center text-center w-full max-w-md">
         <h4 className="text-2xl sm:text-2xl md:text-2xl font-bold text-gray-800">{title}</h4>
@@ -432,8 +694,14 @@ export default function App() {
           <>
             <Hero />
             <Steps />
+            <VideoSection />
+            <ComparisonChart />
+            <PainPointsSection />
+            <NoObligation />
             <Pricing />
+            <Testimonials />
             <BookingForm />
+            <FAQ />
           </>
         ) : currentPage === 'privacy' ? (
           <PrivacyPolicy />
