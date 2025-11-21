@@ -84,6 +84,12 @@
             </svg>
         );
 
+        const PhoneIcon = () => (
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-14 w-14 sm:h-16 sm:w-16" fill="white" viewBox="0 0 24 24">
+                <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 00-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z" />
+            </svg>
+        );
+
         // --- Components ---
 
         const Header = ({ onNavigate, currentPage }) => {
@@ -202,13 +208,9 @@
                         {/* Service 1: Home Service */}
                         <div className="mb-16 sm:mb-20">
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
-                                <div className="order-1 md:order-first">
+                                <div>
                                     <h3 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">Already Have a Patch? Home Service (₹799)</h3>
                                     <p className="text-lg text-gray-700 mb-6 leading-relaxed">Professional patch maintenance at your doorstep. We handle everything—removal, cleaning, and re-fixing.</p>
-                                    <div className="order-2">
-                                        {/* Home Service Process */}
-                                        <img src="home-service-process.jpeg" alt="Home Patch Service" className="w-full rounded-xl shadow-lg object-cover" />
-                                    </div>
                                     <div className="bg-blue-50 p-6 rounded-lg mb-6">
                                         <h4 className="font-bold text-red-600 mb-4">Your Pain Points (We Get It!):</h4>
                                         <ul className="space-y-3">
@@ -244,21 +246,19 @@
                                         </ul>
                                     </div>
                                 </div>
-
+                                <div>
+                                    {/* Home Service Process */}
+                                    <img src="home-service-process.jpeg" alt="Home Patch Service" className="w-full rounded-xl shadow-lg object-cover" />
+                                </div>
                             </div>
                         </div>
 
                         {/* Service 2: Home Demo */}
                         <div>
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
-
-                                <div className="order-1 md:order-2">
+                                <div>
                                     <h3 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">New to Hair Patches? Home Demo (₹299)</h3>
                                     <p className="text-lg text-gray-700 mb-6 leading-relaxed">Try real hair patches at home before you decide. See, feel, and understand what's right for you.</p>
-                                    <div className="order-2 md:order-1">
-                                        {/* Home Demo Samples */}
-                                        <img src="home-demo-samples.jpeg" alt="Home Demo Trial" className="w-full rounded-xl shadow-lg object-cover" />
-                                    </div>
                                     <div className="bg-blue-50 p-6 rounded-lg mb-6">
                                         <h4 className="font-bold text-red-600 mb-4">Your Pain Points (We Get It!):</h4>
                                         <ul className="space-y-3">
@@ -289,6 +289,10 @@
                                             </li>
                                         </ul>
                                     </div>
+                                </div>
+                                <div>
+                                    {/* Home Demo Samples */}
+                                    <img src="home-demo-samples.jpeg" alt="Home Demo Trial" className="w-full rounded-xl shadow-lg object-cover" />
                                 </div>
                             </div>
                         </div>
@@ -576,11 +580,33 @@
             );
         };
 
-        const FloatingWhatsAppButton = () => (
-            <a href="https://wa.me/911234567890" target="_blank" rel="noopener noreferrer" className="fixed bottom-4 sm:bottom-6 right-4 sm:right-6 rounded-full shadow-lg hover:shadow-xl transition duration-300 z-50 p-2 sm:p-3" aria-label="Chat on WhatsApp">
-                <WhatsAppIcon />
-            </a>
-        );
+        const FloatingWhatsAppButton = () => {
+            const phoneNumber = "8828455336";
+            const whatsappMessage = encodeURIComponent("Hi! Would you like to book a home demo or home service?\n\nDemo ₹299 includes technician visit + patch trial.");
+
+            return (
+                <div className="fixed bottom-4 sm:bottom-6 right-4 sm:right-6 z-50 flex flex-col gap-3">
+                    {/* Call Button */}
+                    <a
+                        href={`tel:+91${phoneNumber}`}
+                        className="bg-blue-600 rounded-full shadow-lg hover:shadow-xl hover:bg-blue-700 transition duration-300 p-2 sm:p-3"
+                        aria-label="Call Us"
+                    >
+                        <PhoneIcon />
+                    </a>
+                    {/* WhatsApp Button */}
+                    <a
+                        href={`https://wa.me/91${phoneNumber}?text=${whatsappMessage}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="rounded-full shadow-lg hover:shadow-xl transition duration-300 p-2 sm:p-3"
+                        aria-label="Chat on WhatsApp"
+                    >
+                        <WhatsAppIcon />
+                    </a>
+                </div>
+            );
+        };
 
         const PrivacyPolicy = () => (
             <div className="bg-white py-8 sm:py-12">
